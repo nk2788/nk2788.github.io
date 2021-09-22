@@ -1,1 +1,1 @@
-# [Week 2](https://nk2788.github.io/week02/)
+<a href="https://nk2788.github.io/week02/"> Week 2 </a>
