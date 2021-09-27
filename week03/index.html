@@ -1,0 +1,91 @@
+<html>
+	<head>
+		<title>week03</title>
+	</head>
+	<style>
+		.container {
+		  position: relative;
+		}
+		.image {
+		  display: block;
+		  width: 100%;
+		  height: auto;
+		}
+		.container:hover .overlay {
+  			opacity: 75%;
+		}
+		.overlay {
+		  position: absolute;
+		  top: 0;
+		  bottom: 0;
+		  left: 0;
+		  right: 0;
+		  height: 100%;
+		  width:  100%;
+		  opacity: 0;
+		  transition: .5s ease;
+		  background-color: #008CBA;
+		}
+		.text {
+		  color: white;
+		  font-size: 40px;
+		  font-family: serif;
+		  position: absolute;
+		  top: 50%;
+		  left: 50%;
+		  -webkit-transform: translate(-50%, -50%);
+		  -ms-transform: translate(-50%, -50%);
+		  transform: translate(-50%, -50%);
+		  text-align: center;
+		}
+	</style>
+	<body style="background-color: lightblue;">
+		<main>
+			<div style="text-align: center; font-style: italic; color:#ff4b0d; text-shadow: 1px 0 0 darkblue;">
+				<b style="font-size: 60pt;">
+					WAYS OF SEEING
+				</b>
+				<br>
+				<br>
+				<b style="font-size: 50pt; font-weight: normal;">
+					JOHN BERGER	
+				</b>
+				<br>
+				<br>
+			</div>
+			<img src="https://i.giphy.com/media/3o7aDd5SyswjQEAbtK/giphy.webp" width=380;>
+			<div class="container"; style="float: left; width: 32%; border: 6px solid white;" >
+				<img src="https://i.ebayimg.com/images/g/A-UAAOSw44BYJYf5/s-l300.jpg" class="image";>
+				<div class="overlay">
+					<div class="text">
+						Redistribution of Art
+					</div>
+				</div>
+			</div>
+			<div class="container"; style="float: right; width: 38%;">
+				<img src="https://fansinaflashbulb.files.wordpress.com/2013/11/seymour_david_1122_2002-e1385140093870.jpg?w=640" class="image";>
+				<div class="overlay">
+					<div class="text">
+						The Male Gaze
+					</div>
+				</div>
+			</div>
+			<div class="container"; style="float: left; width: 38%; border: 6px solid white;">
+				<img src="https://d1nn9x4fgzyvn4.cloudfront.net/styles/860x645/s3/migration-slide-image/SC172672_4x3.jpg" class="image";>
+				<div class="overlay">
+					<div class="text">
+						The Wealthy's Perspective
+					</div>
+				</div>
+			</div>
+			<div class="container"; style="float: right; width: 35%; border: 6px solid white;">
+				<img src="https://ingechristopher.com/sites/default/files/styles/blog-image/public/images/blog/lily-aldridge-s-moda-spain-70s-fashion-editorial-1970s-style.jpg?itok=BbqFmmH6" class="image";>
+				<div class="overlay">
+					<div class="text">
+						Glamor and Envy
+					</div>
+				</div>
+			</div>
+		</main>
+	</body>
+</html>
