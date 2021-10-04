@@ -1,0 +1,67 @@
+body{
+	background-color: lightblue;
+}
+#hair{
+	display: flex;
+	justify-content: center;
+	border-top-left-radius: 40%;
+	border-top-right-radius: 40%;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: black;
+	width: 500px;
+	height:  550px;
+}
+
+/*https://www.color-hex.com/color-palette/547*/
+#head{
+	background-color: #ffdbac;
+	height: 50vh;
+	width: 50vh;
+	margin-top: 75px;
+	border-radius: 48%;
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
+}
+
+#leftEye{
+	border-radius: 50%;
+	background-color: white;
+	width: 10vh;
+	height: 10vh;
+	margin-top:  100px;
+	margin-left: 75px;
+	position: absolute;
+}
+
+#rightEye{
+	border-radius: 50%;
+	background-color: white;
+	width: 10vh;
+	height: 10vh;
+	margin-top:  100px;
+	margin-left: 200px;
+	position: absolute;
+}
+
+.pupil{
+	border-radius: 50%;
+	background-color: black;
+	width: 5vh;
+	height: 5vh;
+	margin-top: 30px;
+	margin-left: 17px;
+}
+
+/*https://www.youtube.com/watch?v=BlQ_OY2jkfs*/
+#mouth{
+	width: 180px;
+	height: 50px;
+	border-radius: 0 0 150px 150px / 0 0 90px 90px;
+	background-color: #e7accf;
+	position: absolute;
+	margin-top: 240px;
+	margin-left: 90px;
+}
+
