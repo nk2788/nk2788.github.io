@@ -1,0 +1,85 @@
+body{
+	background-color: #00008b;
+	color: white;
+	text-align: center;
+	font-style: italic;
+	position: relative;
+
+}
+
+nav{
+	overflow: hidden;
+}
+
+nav a{
+	float: left;
+	font-size: 3vh;
+	color: orange;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+}
+
+.dropdown{
+	float: left;
+	overflow: hidden;
+}
+
+button{
+	/*font-size: 16px;*/
+	font-size: 3vh;
+	font-style: italic;
+	border: none;
+	outline: none;
+	color: orange;
+	padding: 14px 16px;
+	background-color: inherit;
+	font-family: inherit;
+	margin: 0;
+}
+
+nav a:hover, .dropdown:hover button{
+	background-color: orange;
+	color: white;
+}
+
+.dropdownContent{
+	display: none;
+	position: absolute;
+	background-color: white;
+	min-width: 160px;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	z-index: 1;
+}
+
+.dropdownContent a{
+	float: none;
+	color: orange;
+	padding: 14px 16px;
+	text-decoration: none;
+	display: block;
+	text-align: left;
+}
+
+.dropDownContent a:hover{
+	background-color: white;
+	color: #00008b;
+}
+
+.dropdown:hover .dropDownContent{
+	display: block;
+}
+
+
+h1{
+	font-size: 15vh;
+}
+
+a{
+	font-size: 7vh;
+	color: white;
+}
+
+a:hover{
+	color: orange;
+}
