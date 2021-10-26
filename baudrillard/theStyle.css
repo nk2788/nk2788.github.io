@@ -1,0 +1,18 @@
+
+#woman_pic{
+	height:  35vh;
+	width:  auto;
+	grid-column: 3;
+	grid-row: 3;
+}
+
+.crowd{
+	display: grid;
+	grid-template: 20% 20% 20% 20% 20%/20% 20% 20% 20% 20%;
+}
+
+.crowd_pic{
+	height: 35vh;
+	width:  auto;
+}
+
