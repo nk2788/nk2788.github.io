@@ -1,0 +1,79 @@
+body {
+ background-color: white;
+ display:grid;
+ font-family: Spartan;
+}
+
+p {
+  font-size: 100px;
+  text-align: center;
+}
+
+button {
+  background-color: lightblue;
+  padding: 10vw;
+  margin: 2vh;
+  border: solid 3px black;
+  border-radius:  50px;
+}
+
+
+button:hover {
+ background-color: orangered;
+}
+
+#theSun{
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  margin-left: 100vh;
+  /*margin-top: 30vh;*/
+  background-color: yellow;
+  display: inline-block;
+}
+
+/*https://lauryndbrown.github.io/2017/06/08/creating-clouds-in-css.html*/
+
+.cloud{ 
+   width:350px;
+   height:120px;
+   background:#ECEFF1;
+   box-shadow: 10px 10px rgba(0,0,0,0.2);
+   border-radius:100px;
+}
+
+.cloud1{
+  margin-top:-70px;
+}
+
+.cloud2{
+  margin-top:50px;
+  margin-left: 370px;
+}
+.cloud::after, .cloud::before{
+    content:"";
+    position:relative;
+    display:inline-block;
+    background:inherit;
+    border-radius:inherit;
+}
+.cloud::after{
+    width:100px;
+    height:100px;
+    top:-112px;
+    left:-173px;
+}
+.cloud::before{
+    width:180px;
+    height:180px;
+    top: -70px;
+    left:101px;
+}
+
+
+
+Resources
+
+
+
+Resources
