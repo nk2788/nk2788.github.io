@@ -1,0 +1,71 @@
+body { 
+	margin: 0; 
+	background-color: lightblue;
+	color: #E97451;
+}
+
+canvas { 
+	width: 100%; height: 100% 
+}
+
+h1{
+	text-align: center;
+	font-weight: 545;
+	font-size: 7rem;
+	line-height: 6rem;
+}
+
+#container{
+	text-align: center;
+}
+
+.text{
+	font-size:  2rem;
+	font-weight: 550;
+	line-height: 4rem;
+	text-align: center;
+}
+
+button{
+	padding: 15px 32px;
+	border: 2px solid #E97451;
+	font-size: 1rem;
+	font-weight: 600;
+	background-color: white;
+	color: #E97451;
+	margin: 15px;
+}
+
+button:hover{
+	background-color: #E97451;
+	color: white;
+	border-color: white;
+}
+
+.textbox{
+	height: 10vh;
+	font-size: 2rem;
+	border: 2px solid #E97451;
+}
+
+#displayLines{
+	display: none;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	
+}
+
+#printline{
+	font-size: 3rem;
+}
+
+#promptAddress{
+	text-align: center;
+	display: none;
+}
+
+#calculations{
+	display: none;
+}
+

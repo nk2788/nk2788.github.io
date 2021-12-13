@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title> Final </title>
+        <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="theStyle.css">
+       <!--  <script src="scene.js" defer></script> -->
+        <script src="calculations.js" defer></script>
+        <script src="https://threejs.org/build/three.js"></script>
+    </head>
+	<body>
+        <div id="container">
+            <div class="text">
+                Enter Total Size of Cache Excluding Metadata
+            </div>
+            <input type="number" class="textbox" id="cacheSize">
+            <div class="text">
+                Enter Cache Associativity
+            </div>
+            <input type="number" class="textbox" id="assoc">
+            <div class="text">
+                Enter Cache Blocksize
+            </div>
+            <div id="lines">
+            </div>
+            <input type="number" class="textbox" id=blocksize>
+            <br><br><br><br><br><br>
+            <button onclick= amountOfLines() value="Display">
+                Next
+            </button>
+        </div>
+
+        <div id="displayLines">
+            <div class="text">
+                linesInCache = totalSizeOfCache / associativity / blocksize
+            </div>
+            <br><br><br><br>
+            <div class="text">
+                There is/are
+            </div>
+            <div class="text" id="printline" >
+            </div>
+            <div class="text">
+                line(s) in the L1 cache
+            </div>
+            <button onclick= askUserForAddress() value="Display">
+                Next
+            </button>
+        </div>
+
+        <div id="promptAddress">
+            <div class="text">
+                Please Enter Address of Memory Accessed
+            </div>
+            <input type="number" class="textbox" id="address">
+             <button onclick= renderCache() value="Display">
+                Next
+            </button>
+        </div>
+
+        <div id="calculations">
+            <div class="text" >
+                blockid = address // blocksize
+            </div>
+            <div class="text" id="printblockid">
+            </div>
+            <div class="text">
+                index = blockid % lineInCache
+            </div>
+            <div class="text" id="printindex">
+            </div>
+        </div>
+	</body>
+
+</html>
