@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title> Final </title>
+        <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+	<body>
+        <h1>
+            TUTORIAL
+        </h1>
+        <div id="container">
+            <div class="text">
+                A cache is a reserved storage location used in order to access memory. Typically, it takes a long time to access main memory (RAM), so caches are used to optimize that time by storing the most used data in the cache. Instead of always going to main memory, we first check to see if the data is stored in the cache. If it, that is a cache hit! If not, it is a cache miss and then we go to main memory.
+            </div>
+            <br><br>
+            <div id="rect" class='text'>
+                CPU
+            </div>
+            <p class="arrow">
+            </p>
+            <div id="rect" class='text'>
+                Cache
+            </div>
+            <p class="arrow">
+            </p>
+            <div id="rect" class='text'>
+                RAM
+            </div>
+        
+            <br><br><br>
+            <div class="text">
+                The total size of the cache, cache associativity, and the blocksize of the cache all affect how data is stored in the cache.  
+            </div>
+            <br><br>
+            <div class="text">
+                The higher the blocksize, the more cache hits there will be. This is because data will be stored in a block holding multiple addresses. For example if the blocksize is 4, each block will hold 4 addresses. So if want to store address 8 in the cache, address 8, 9, 10, and 11 will all be stored together.
+            </div>
+            <br><br>
+            <div class="text">
+                Cache associativity refers to how many blocks can be stored in a single line of the cache. If the cache associativity is high, there will be more hits.
+            </div>
+            <br><br>
+            <div class="text">
+                Using all three, we can  calculate what line of the cache the data should be stored in. The blockid will be stored in that index. In this simulator, we are using a building to represent a cache and each line of the cache will be represented by each floor of the building.
+            </div>
+            <br><br>
+             <button onclick="document.location ='cache1.html'">
+                Start
+            </button>
+        </div>
+	</body>
+
+</html>

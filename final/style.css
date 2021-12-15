@@ -18,7 +18,7 @@ h1{
 
 #container{
 	text-align: center;
-	margin: 40vh;
+	margin: 30vh;
 	margin-top: 0vh;
 }
 
@@ -70,11 +70,26 @@ button:hover{
 
 #calculations{
 	display: none;
+	text-align: center;
 }
 
-#ram{
-	width: 50%;
+#rect{
+	width: 30vh;
+	height: 14vh;
 	background-color: white;
+	display: inline-block;
+	font-size: 4vh;
+	border: solid #E97451;
+}
+
+.arrow{
+	border: solid #E97451;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 5px;
+    margin: -3px;
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
 }
 
 

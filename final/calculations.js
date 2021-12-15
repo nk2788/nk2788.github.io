@@ -44,25 +44,7 @@ function askUserForAddress(){
 	
 };
 
-function getTexture(blockid) {
-  const canvas = document.createElement("canvas");
-  canvas.width = 64;
-  canvas.height = 32;
-  const context = canvas.getContext("2d");
 
-  // context.fillStyle = "#ffffff";
-  // context.fillRect(0, 0, 64, 32);
-
-  // context.fillStyle = "#D3D3D3";
-  context.fillRect(8, 8, 48, 24);
-  context.font = "13pt times";
-  context.fillStyle="black";
-  context.textAlign="center";
-  context.textBaseline="top"
-  context.fillText(blockid, canvas.width/2, canvas.height/2);
-
-  return new THREE.CanvasTexture(canvas);
-}
 
 function renderCache(){
 	var calculations= document.getElementById("calculations");
@@ -81,28 +63,56 @@ function renderCache(){
 	renderer.setSize( window.innerWidth, window.innerHeight );
 	document.body.appendChild( renderer.domElement );
 
+	var dynamicTexture  = new THREEx.DynamicTexture(512,512);
+	dynamicTexture.context.font	= "bolder 120px Verdana";
+	dynamicTexture.clear().drawText("", undefined, 256, "white");
+
 	const geometry = new THREE.BoxGeometry(1,1,1);
 	const material1 = new THREE.MeshBasicMaterial( { color: 0x808080 } );
 	const material2 = new THREE.MeshBasicMaterial( { color: 0xA9A9A9 } );
-
+	const material4=new THREE.MeshBasicMaterial( { color: 0x808080, map:dynamicTexture.texture } );
+	const material5=new THREE.MeshBasicMaterial( { color: 0xA9A9A9, map:dynamicTexture.texture } );
+	console.log(arr);
 
 	for (let i=0; i< line; i++){
 		const cube= new THREE.Mesh(geometry, material1);
 		const cube1= new THREE.Mesh(geometry, material2);
+		const cube3= new THREE.Mesh(geometry, material4);
+		const cube4= new THREE.Mesh(geometry, material4);
 		if (i%2==0){
-			scene.add(cube);
-			cube.position.y=-i;
-			cube.position.x= -4;;
-			cube.rotation.y=1;
+			if (i==index){
+				scene.add(cube3);
+				dynamicTexture.texture.needsUpdate  = true;
+				cube3.position.y=-i;
+				cube3.position.x= -4;;
+				cube3.rotation.y=1;
+			}
+			else{
+				scene.add(cube);
+				cube.position.y=-i;
+				cube.position.x= -4;;
+				cube.rotation.y=1;
+			}
+			
 		}
 		else{
-			scene.add(cube1);
-			cube1.position.y=-i;
-			cube1.position.x= -4;
-			cube1.rotation.y=1;	
+			if (i==index){
+				scene.add(cube4);
+				dynamicTexture.texture.needsUpdate  = true;
+				cube4.position.y=-i;
+				cube4.position.x= -4;
+				cube4.rotation.y=1;	
+			}
+			else{
+				scene.add(cube1);
+				cube1.position.y=-i;
+				cube1.position.x= -4;
+				cube1.rotation.y=1;	
+			}
 		}
 		
 	}
+	dynamicTexture.texture.needsUpdate  = true
 	camera.position.z = 5;
 	const geometry3 = new THREE.BoxGeometry(4,4,4);
 	const cube3= new THREE.Mesh(geometry3, material1);
@@ -125,30 +135,40 @@ function renderCache(){
 
 			renderer.render( scene, camera );
 		}
+		else{
+			return;
+		}
 		
 	};
 	animate();
+	dynamicTexture.clear().drawText(blockid, undefined, 256, "white");
 	// for (let i=0; i<2; i++){
 	// 	cube2.position.x += 0.5;
 	// 	renderer.render( scene, camera );
 	
 	// }
-	const val =0;
+	var val =0;
 	for (let i =0; i < arr[index].length; i++){
 		if (arr[index][i]==blockid){
+			alert("CACHE HIT!");
 			scene.background= new THREE.Color( 0x00FF00);
 			val =1;
 			arr.splice(i, 1);
 			const animate = function () {
-			requestAnimationFrame( animate );
-			cube2.position.x -= 0.02;
-			// cube.rotation.y += 0.01;
+				requestAnimationFrame( animate );
+				if (cube2.position.x >= -4.5){
+					cube2.position.x -= 0.02;
+					// cube.rotation.y += 0.01;
 
-			renderer.render( scene, camera );
-			
-			
-		};
-		animate();
+					renderer.render( scene, camera );
+
+				}
+				else{
+					return;
+				}
+				
+			};
+			animate();
 		}
 	}
 	arr[index].push(blockid);
@@ -156,6 +176,7 @@ function renderCache(){
 		arr.splice(0, 1);
 	}
 	if (val == 0){
+		alert("CACHE MISS :(" );
 		scene.background= new THREE.Color( 0xffcccb);
 		const animate = function () {
 			requestAnimationFrame( animate );
@@ -165,75 +186,16 @@ function renderCache(){
 
 				renderer.render( scene, camera );
 			}
-			// else{
-			// 	cube2.position.x -= 0.02;
-			// 	// cube.rotation.y += 0.01;
-
-			// 	renderer.render( scene, camera );
-			// }
+			else{
+				cube2.position.x -= 0.02;
+			}
+			
 			
 		};
 		animate();
 	}
 
-	// const canvas = document.createElement("canvas");
- //  	canvas.width = 128;
- //  	canvas.height = 32;
- //  	const context = canvas.getContext("2d");
-
- //  	context.fillRect(0, 0, 64, 32);
-	// context.font = "13pt times";
- // 	context.fillStyle="black";
- //  	context.textAlign="center";
- //  	context.textBaseline="top"
- //  	context.fillText("123", canvas.width/2, canvas.height/2);
-
-  	// const num = new THREE.MeshLambertMaterial({ map: carFrontTexture });
-  	// cube.add(num);
-
-  	for (let i=0; i< line; i++){
-		const cube= new THREE.Mesh(geometry, material1);
-		const cube1= new THREE.Mesh(geometry, material2);
-		if (i%2==0){
-			if (i==index){
-				console.log("yuh");
-				const texture= getTexture(blockid);
-				const num = new THREE.Mesh(new THREE.BoxBufferGeometry(33, 12, 24), [
-				    new THREE.MeshLambertMaterial({ map: texture }),
-				    new THREE.MeshLambertMaterial({ map: texture }),
-				    new THREE.MeshLambertMaterial({ color: 0xffffff }), // top
-				    new THREE.MeshLambertMaterial({ color: 0xffffff }), // bottom
-				    new THREE.MeshLambertMaterial({ map: texture }),
-				    new THREE.MeshLambertMaterial({ map: texture }),
-  				]);
-  				cube.add(num);
-  				scene.add(cube);
-				cube.position.y=-i;
-				cube.position.x= -4;;
-				cube.rotation.y=1;
-			}
-		}
-		else{	
-			if (i==index){
-				console.log("yuh");
-				const texture= getTexture(blockid);
-				const num = new THREE.Mesh(new THREE.BoxBufferGeometry(33, 12, 24), [
-				    new THREE.MeshLambertMaterial({ map: texture }),
-				    new THREE.MeshLambertMaterial({ map: texture }),
-				    new THREE.MeshLambertMaterial({ color: 0xffffff }), // top
-				    new THREE.MeshLambertMaterial({ color: 0xffffff }), // bottom
-				    new THREE.MeshLambertMaterial({ map: texture }),
-				    new THREE.MeshLambertMaterial({ map: texture }),
-  				]);
-  				cube1.add(num);
-  				scene.add(cube1);
-				cube1.position.y=-i;
-				cube1.position.x= -4;
-				cube1.rotation.y=1;
-			}
-		}
-		
-	}
+	
 	
 
 };
