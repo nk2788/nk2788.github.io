@@ -1,17 +1,1 @@
-<html>
-	<head>
-		<title> Home </title>
-	</head>
-	<body>
-		<main>
-			<h1>
-				Home
-			</h1>
-			<h2>
-				<a href="https://nk2788.github.io/week02/"> Week 2 </a>
-				<a href="https://nk2788.github.io/week03/"> Week 3 </a>
-			</h2>
-		</main>
-	</body>
-
-</html>
+This repository consists of all the work and projects I have done for my Intro to Web Development class. It mainly consists of front end web development using HTML, CSS, and JavaScript. My best work is demonstrated in both the midterm and the final projects. In the midterm, I decided to combine my love of fashion with web design and create a randomly generated mood board for fashion inspiration. In my final project, I decided to make it more technical and create a 3D visualizer using the JavaScript library Three.js to create a 3D model of how a cache seems to operate.
